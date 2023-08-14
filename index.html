@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="description" content="AIoT Tech Radar: a tool to visualize technology choices, inspire and support Engineering teams to pick the best technologies for new projects">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIoT Tech Radar</title>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="qd_protocols.js"></script>
+<script src="qd_tools.js"></script>
+<script src="qd_ai.js"></script>
+<script src="qd_platforms.js"></script>
+<script src="quadrants.js"></script>
+<script src="radar.js"></script>
+
+<link rel="stylesheet" href="radar.css">
+</head>
+
+<body>
+
+<svg id="radar"></svg>
+
+<script>
+radar_visualization({
+  svg_id: "radar",
+  width: 1450,
+  height: 1000,
+  colors: {
+    background: "#fff",
+    grid: '#dddde0',
+    inactive: "#ddd"
+  },
+  title: "AIoT Tech Radar",
+  date: "2023.07",
+  quadrants: quadrants,
+  rings: [
+    { name: "ADOPT", color: "#5ba300" },
+    { name: "TRIAL", color: "#009eb0" },
+    { name: "ASSESS", color: "#c7ba00" },
+    { name: "HOLD", color: "#e09b96" }
+  ],
+  print_layout: true,
+  links_in_new_tabs: true,
+  // zoomed_quadrant: 0,
+  //ENTRIES
+  entries: entries
+  //ENTRIES
+});
+</script>
+<ul>
+  <li><strong>ADOPT</strong> &mdash; 这些技术已经被广泛采用，并在实际项目中得到验证和应用。它们已经被证明是有价值的，并被广泛接受。</li>
+  <li><strong>TRIAL</strong> &mdash;  这些技术正在进行试验和实验，并在实际项目中进行验证。它们可能已经展示出一些潜在的好处，但还需要进一步的测试和验证。</li>
+  <li><strong>ASSESS</strong> &mdash; 这些是具有潜在价值和未来发展潜力的技术。它们可能还处于早期阶段，需要更多的研究和评估才能确定其实际用途和效益。</li>
+  <li><strong>HOLD</strong> &mdash; 当前时间，这项技术或趋势被认为不适合或不建议采用。可能存在一些原因，例如技术尚不成熟，存在严重的问题或限制，或者存在更好的替代方案。因此，持有观望态度并暂时不采用这项技术是明智的选择，以等待更好的情况或解决方案出现</li>
+</ul>
+</body>
+</html>
